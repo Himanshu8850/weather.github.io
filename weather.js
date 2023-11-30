@@ -22,12 +22,18 @@ const weathfind = async () => {
     city.value = "";
     desc.innerHTML = data.weather[0].description;
     ha1.innerHTML = Math.round(data.wind.speed) + " km/hr";
-    ha2.innerHTML = Math.round(data.main.humidity) + " km/hr";
+    ha2.innerHTML = Math.round(data.main.humidity) + "%";
     container.style.maxHeight = "600px";
     we.style.display = "block";
     const cond = data.weather[0].main.toLowerCase();
     g[0].src = `./images/${cond}.png`;
 };
+city.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        cityspace.innerHTML = city.value;
+        weathfind();
+    };
+});
 but.addEventListener('click', () => {
     cityspace.innerHTML = city.value;
     weathfind();
