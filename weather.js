@@ -22,7 +22,7 @@ const weathfind = async () => {
     city.value = "";
     desc.innerHTML = data.weather[0].description;
     ha1.innerHTML = Math.round(data.wind.speed) + " km/hr";
-    ha2.innerHTML = Math.round(data.main.humidity) + " km/hr";
+    ha2.innerHTML = Math.round(data.main.humidity) + "%";
     container.style.maxHeight = "600px";
     we.style.display = "block";
     const cond = data.weather[0].main.toLowerCase();
